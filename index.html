@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orçamento Moovup</title>
+</head>
+<body>
+    <div class="column">
+        <img class="logo" src="logo.png" alt="Logo MoovUp">
+        <form class="form" onsubmit="event.preventDefault(); calcularDistancia();">
+            <label for="origem"><b>ORIGEM:</b></label><br><br>
+            <select id="origem" name="origem" required><br><br>
+                <!-- [Latitude, longitude, taxas aeroportuárias] -->
+                <option value="[-23.5118,-46.6299,400]">Campo de Marte (São Paulo)/SP</option>
+                <option value="[-29.1949,-51.1869,200]">Caxias do Sul/RS</option>
+                <option value="[-27.1318,-52.6607,250]">Chapecó/SC</option>
+                <option value="[-25.5315,-49.1740,400]">Curitiba/PR</option>
+                <option value="[-27.6745,-48.5462,400]">Florianópolis/SC</option>
+                <option value="[-23.1823,-46.9411,400]">Jundiai/SP</option>
+                <option value="[-23.3322,-51.131,200]">Londrina/PR</option>
+                <option value="[-23.4795,-52.0122,200]">Maringa/PR</option>
+                <option value="[-28.2405,-52.3283,200]">Passo Fundo/RS</option>
+                <option value="[-29.9961,-51.1768,400]">Porto Alegre/RS</option>
+                <option value="[-26.7782,-53.5056,0]">São Miguel do Oeste/SC</option>
+                <option value="[-29.7840,-57.0357,200]">Uruguaiana/RS</option>
+            </select><br><br>
+            <label for="destino"><b>DESTINO:</b></label><br><br>
+            <select id="destino" name="destino" required><br><br>
+                <!-- [Latitude, longitude, taxas aeroportuárias] -->
+                <option value="[-23.5118,-46.6299,400]">Campo de Marte (São Paulo)/SP</option>
+                <option value="[-29.1949,-51.1869,200]">Caxias do Sul/RS</option>
+                <option value="[-27.1318,-52.6607,250]">Chapecó/SC</option>
+                <option value="[-25.5315,-49.1740,400]">Curitiba/PR</option>
+                <option value="[-27.6745,-48.5462,400]">Florianópolis/SC</option>
+                <option value="[-23.1823,-46.9411,400]">Jundiai/SP</option>
+                <option value="[-23.3322,-51.131,200]">Londrina/PR</option>
+                <option value="[-23.4795,-52.0122,200]">Maringa/PR</option>
+                <option value="[-28.2405,-52.3283,200]">Passo Fundo/RS</option>
+                <option value="[-29.9961,-51.1768,400]">Porto Alegre/RS</option>
+                <option value="[-26.7782,-53.5056,0]">São Miguel do Oeste/SC</option>
+                <option value="[-29.7840,-57.0357,200]">Uruguaiana/RS</option>
+            </select><br><br>
+            <label for="modeloAeronave"><b>AERONAVE:</b></label><br><br>
+            <select id="modeloAeronave" name="modeloAeronave" required>
+                <!-- [Velocidade de cruzeiro, consumo horário] -->
+                <option value="[147,58]">Cirrus SR22</option>
+                <option value="[175,110]">Seneca III</option>
+            </select><br><br>
+            <input type="submit" value="Calcular" onclick="calcularDistancia(), calculos()">
+        </form>
+    </div>
+    <div class="column">
+        <h1>RESULTADOS</h1>
+        <table>
+            <tr>
+                <td><strong>Distancia</strong></td>
+                <td id="distanciaResultado"></td>
+            </tr>
+            <tr>
+                <td><strong>Tempo de voo</strong></td>
+                <td id="tempoResultado"></td>
+            </tr>
+            <tr>
+                <td><strong>Custo Combustível*</strong></td>
+                <td id="custoCombustivel"></td>
+            </tr>
+            <tr>
+                <td><strong>Custo Taxas Aeroportuárias</strong></td>
+                <td id="custoTaxas"></td>
+            </tr>
+            <tr>
+                <td><strong>Custo Total**</strong></td>
+                <td id="custoTotal"></td>
+            </tr>
+        </table>
+        <h6>* Valor do combustível R$ 14,50</h6>
+        <h6>** Não leva em conta reserva para manutenções de rotina e revisões de hélice, célula, motores</h6>
+    </div>
+</body>
+<link rel="stylesheet" href="global.css">
+<script src="script.js"></script>
+</html>

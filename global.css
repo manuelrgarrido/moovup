@@ -1,0 +1,29 @@
+
+.logo{
+    max-width: 60%;
+}
+form {
+    margin-top: 70px;
+}
+.column {
+    flex: 1;  /* Isso faz com que cada coluna tome um terço da largura */
+    padding: 10px;  /* Espaço interno em cada coluna */
+    border: 1px solid black;  /* Uma borda para visualizar as colunas */
+}
+body {
+    display: flex;
+    justify-content: space-between; /* Isso irá distribuir o espaço igualmente entre as colunas */
+}
+table {
+    width: 80%; /* Faz com que a tabela ocupe toda a largura disponível */
+    border-collapse: collapse; /* Remove espaços entre as células */
+}
+
+table, th, td {
+    border: 1px solid black; /* Adiciona borda à tabela e a cada célula */
+}
+
+th, td {
+    padding: 8px 12px; /* Espaçamento interno para as células */
+    text-align: left; /* Alinha o texto à esquerda */
+}
